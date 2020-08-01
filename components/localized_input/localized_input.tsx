@@ -11,7 +11,7 @@ type Props = {
         values?: {string: any};
     };
     value?: string;
-};
+} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'placeholder' | 'value'>;
 
 const LocalizedInput = React.forwardRef((props: Props, ref?: React.Ref<HTMLInputElement>) => {
     const {placeholder, ...otherProps} = props;
